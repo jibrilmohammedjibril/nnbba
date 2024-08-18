@@ -22,7 +22,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Setup MongoDB client (consider using environment variables for sensitive information)
-client = AsyncIOMotorClient(os.getenv("MONGO_URI"))
+MONGO_URI = os.getenv("MONGO_URI")
+client = AsyncIOMotorClient(MONGO_URI)
 db = client["NNBBA"]
 users_collection = db["users"]
 otp_collection = db["otp_tokens"]
