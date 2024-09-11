@@ -7,6 +7,7 @@ import schemas
 from schemas import Token, User
 from crud import authenticate_user
 from authentication import create_access_token, get_current_active_user, ACCESS_TOKEN_EXPIRE_MINUTES, get_current_user
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 app.add_middleware(
