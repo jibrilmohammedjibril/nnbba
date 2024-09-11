@@ -9,7 +9,13 @@ from crud import authenticate_user
 from authentication import create_access_token, get_current_active_user, ACCESS_TOKEN_EXPIRE_MINUTES, get_current_user
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/token", response_model=Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
