@@ -8,7 +8,7 @@ from crud import get_user
 
 SECRET_KEY = "f67t8ygh87t85tyigv76fg76rty778hg679oip9p8"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 1
+ACCESS_TOKEN_EXPIRE_MINUTES = 3
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
